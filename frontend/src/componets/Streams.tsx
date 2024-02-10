@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
 
 function Streams() {
     const [streams, setStreams] = useState([])
+    const navigateTo = useNavigate();
+
 
     const AuthStr = 'Bearer iemqodydrew18rjgv5zvlhn64tfmt3'; 
     useEffect(() => {
@@ -29,16 +32,22 @@ function Streams() {
         })
           .then(results => results.json())
           .then(streams => {
-            console.log(streams)
             setStreams(streams.data)
           });
       }, []);
+
+      
   
     return (
       <>
+      <div className="container layout-container">
+      <div className="d-flex p-2">
       <div className="row">
-        {streams.map(stream => (          
-          <div className="col-sm-3 mb-3 mb-sm-4" key={stream.id}>
+        {streams.map(stream => (  
+                  
+          <div className="col-sm-3 mb-12 mb-sm-12" key={stream.id} onClick={() => {
+            navigateTo("/livestream/"+stream.id);
+          }}>
           <div className="badge text-wrap card-text views-count">{stream.viewer_count}</div>
             <div className="badge text-wrap live-text">{stream.type.toUpperCase()}</div>
             <img src={stream.thumbnail_url.replace('{width}', '1000').replace('{height}', '500')} className="card-img-top" alt="..."/  >
@@ -57,7 +66,7 @@ function Streams() {
         
           
         ))}
-      </div>
+      </div></div></div>
       </>
     )
   }
