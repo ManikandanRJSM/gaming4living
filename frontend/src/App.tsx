@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import GameLists from './componets/GameLists'
 import Navbar from './componets/Navbar'
+import Footer from './componets/Footer'
 
 function App() {
 
@@ -11,10 +12,15 @@ function App() {
     <>
     <Navbar />
     <div className="container layout-container">
-    <div className="d-flex p-2">
-    <GameLists />
+      <div className="d-flex p-2">
+        <GameLists />
+      </div>
     </div>
-    </div>
+
+    <Footer />
+
+    
+    
     
      
     </>

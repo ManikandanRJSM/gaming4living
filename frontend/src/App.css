@@ -4,3 +4,22 @@
 span.placeholder.col-6.game-name-cls {
     display: inline;
 }
+html {
+    position: relative;
+    min-height: 100%;
+  }
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    width: 100%;
+    position:absolute;
+  }
+
+.container.footer-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 35px;
+}
