@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 function GameLists() {
-    const [gamelist, setGamelist] = useState(0)
+    const [gamelist, setGamelist] = useState([])
 
     const AuthStr = 'Bearer iemqodydrew18rjgv5zvlhn64tfmt3'; 
     useEffect(() => {
@@ -28,14 +28,32 @@ function GameLists() {
               },
         })
           .then(results => results.json())
-          .then(data => {
-            console.log(data)
+          .then(games => {
+            console.log(games)
+            setGamelist(games.data)
           });
       }, []);
   
     return (
       <>
-        Game list
+      <div className="row">
+        {gamelist.map(game => (          
+          <div className="col-sm-3 mb-3 mb-sm-0">
+            <img src={game.box_art_url.replace('{width}', '9000').replace('{height}', '9000')} className="card-img-top" alt="..."/  >
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title placeholder-glow">
+                  <span className="placeholder col-6">{game.name}</span>
+                </h5>
+                {/* <p className="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
+                <a href="#" className="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        
+          
+        ))}
+      </div>
       </>
     )
   }
