@@ -1,0 +1,6 @@
+.container.layout-container {
+    float: right;
+}
+span.placeholder.col-6.game-name-cls {
+    display: inline;
+}

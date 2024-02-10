@@ -38,15 +38,15 @@ function GameLists() {
       <>
       <div className="row">
         {gamelist.map(game => (          
-          <div className="col-sm-3 mb-3 mb-sm-0">
+          <div className="col-sm-3 mb-3 mb-sm-4" key={game.id}>
             <img src={game.box_art_url.replace('{width}', '9000').replace('{height}', '9000')} className="card-img-top" alt="..."/  >
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title placeholder-glow">
-                  <span className="placeholder col-6">{game.name}</span>
+                  <span className="placeholder col-6 game-name-cls">{game.name}</span>
                 </h5>
                 {/* <p className="card-text">With supporting text below as a natural lead-in to additional content.</p> */}
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <a href="#" className="btn btn-primary">Go</a>
               </div>
             </div>
           </div>
