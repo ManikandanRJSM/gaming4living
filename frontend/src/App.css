@@ -23,3 +23,17 @@ body {
     /* Set the fixed height of the footer here */
     height: 35px;
 }
+
+.badge.text-wrap.live-text {
+  position: absolute;
+  margin-top: 3px;
+  margin-left: 3px !important;
+  background-color: red !important;
+}
+.views-count {
+  position: absolute;
+  margin-top: 107px;
+  margin-left: 203px !important;
+  background-color: rgb(255 117 244) !important;
+  color: black !important;
+}

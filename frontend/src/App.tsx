@@ -5,6 +5,7 @@ import './App.css'
 import GameLists from './componets/GameLists'
 import Navbar from './componets/Navbar'
 import Footer from './componets/Footer'
+import Streams from './componets/Streams'
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
     <Navbar />
     <div className="container layout-container">
       <div className="d-flex p-2">
-        <GameLists />
+        <Streams />
       </div>
     </div>
 
