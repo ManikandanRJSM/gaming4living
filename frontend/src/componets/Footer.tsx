@@ -5,22 +5,36 @@ function Footer() {
 
     return (
       <>
-        <div className="container footer-container">
-            <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                <div className="col-md-4 d-flex align-items-center">
-                <a href="/" className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                    <svg className="bi" width="30" height="24"><use xlinkHref="#bootstrap"></use></svg>
-                </a>
-                <span className="mb-3 mb-md-0 text-muted">Copyright © {year} ManikandanRJSM ®</span>
-                </div>
+        <footer className="footer">
+          <div className="page-up">
+              <a href="#" id="scrollToTopButton"><span className="arrow_carrot-up"></span></a>
+          </div>
+          <div className="container">
+              <div className="row">
+                  <div className="col-lg-3">
+                      <div className="footer__logo">
+                          <a href="./index.html"><img src="img/logo.png" alt="" /></a>
+                      </div>
+                  </div>
+                  <div className="col-lg-6">
+                      <div className="footer__nav">
+                          {/* <ul>
+                              <li className="active"><a href="./index.html">Homepage</a></li>
+                              <li><a href="./categories.html">Categories</a></li>
+                              <li><a href="./blog.html">Our Blog</a></li>
+                              <li><a href="#">Contacts</a></li>
+                          </ul> */}
+                      </div>
+                  </div>
+                  <div className="col-lg-3">
+                      <p>
+                        Copyright &copy; {new Date().getFullYear()} All rights reserved | ManikandanRJSM <i className="fa fa-heart" aria-hidden="true"></i>
+                        </p>
 
-                <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width="24" height="24"><use xlinkHref="#twitter"></use></svg></a></li>
-                <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width="24" height="24"><use xlinkHref="#instagram"></use></svg></a></li>
-                <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width="24" height="24"><use xlinkHref="#facebook"></use></svg></a></li>
-                </ul>
-            </footer>
-        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
       </>
     )}
   

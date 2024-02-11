@@ -5,7 +5,8 @@ import {Routes, Route} from 'react-router-dom'
 
 
 import './App.css'
-import GameLists from './componets/GameLists'
+// import GameLists from './componets/GameLists'
+import GameSidebar from './componets/GameSidebar'
 import Navbar from './componets/Navbar'
 import Footer from './componets/Footer'
 import Streams from './componets/Streams'
@@ -16,18 +17,18 @@ function App() {
     <>
     
     <Navbar />
-    <Routes>
-      <Route path="/" element={<Streams />}></Route>
-    </Routes>
-    
-        
-
+    <section className="product spad">
+      <div className="container">
+        <div className="row">
+          <Routes>
+          
+            <Route path="/" element={[<Streams />, <GameSidebar />]}></Route>
+                  
+          </Routes>
+        </div>
+      </div>
+    </section>
     <Footer />
-
-    
-    
-    
-     
     </>
   )
 }

@@ -40,33 +40,45 @@ function Streams() {
   
     return (
       <>
-      <div className="container layout-container">
-      <div className="d-flex p-2">
-      <div className="row">
-        {streams.map(stream => (  
-                  
-          <div className="col-sm-3 mb-12 mb-sm-12" key={stream.id} onClick={() => {
-            navigateTo("/livestream/"+stream.id);
-          }}>
-          <div className="badge text-wrap card-text views-count">{stream.viewer_count}</div>
-            <div className="badge text-wrap live-text">{stream.type.toUpperCase()}</div>
-            <img src={stream.thumbnail_url.replace('{width}', '1000').replace('{height}', '500')} className="card-img-top" alt="..."/  >
-            <div className="card h-50">
-              <div className="card-body">
-              
-                <h5 className="card-title">
-                  <span className="col-6 game-name-cls">{stream.game_name}</span>
-                </h5>
-                  <p className="card-text">{stream.title}</p>
+
+          <div className="col-lg-8">
+            <div className="trending__product">
+                <div className="row">
+                    <div className="col-lg-8 col-md-8 col-sm-8">
+                        <div className="section-title">
+                            <h4>Streams</h4>
+                        </div>
+                    </div>
+                    {/* <div className="col-lg-4 col-md-4 col-sm-4">
+                        <div className="btn__all">
+                            <a href="#" className="primary-btn">View All <span className="arrow_right"></span></a>
+                        </div>
+                    </div> */}
+                </div>
+                <div className="row">
+                    {streams.map(stream => (
+                        <div className="col-lg-4 col-md-6 col-sm-6" key={stream.id}>
+                            <div className="product__item">
+                                <div className="product__item__pic set-bg">
+                                {/* data-setbg={stream.thumbnail_url.replace('{width}', '1000').replace('{height}', '500')} */}
+                                <img src={stream.thumbnail_url.replace('{width}', '230').replace('{height}', '325')} alt="..."/  >
+                                    <div className="ep">{stream.type.toUpperCase()}</div>
+                                    <div className="view"><i className="fa fa-eye"></i>{stream.viewer_count}</div>
+                                </div>
+                                <div className="product__item__text">
+                                    <ul>
+                                        <li>{stream.game_name}</li>
+                                    </ul>
+                                    <h5><a href="#">{stream.title}</a></h5>
+                                </div>
+                            </div>
+                        </div>
                 
-                {/* <a href="#" className="btn btn-primary">Go</a> */}
-              </div>
+            
+                    ))}
+                </div>
             </div>
-          </div>
-        
-          
-        ))}
-      </div></div></div>
+        </div>
       </>
     )
   }

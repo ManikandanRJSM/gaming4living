@@ -4,14 +4,31 @@ function Navbar() {
   
     return (
       <>
-        <nav className="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-            <div className="container-fluid">
-                <a className="navbar-brand" href="#">
-                {/* <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" /> */}
-                Gamming4Living
-                </a>
+      
+        <header className="header">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-2">
+                        <div className="header__logo">
+                            <a href="./index.html">
+                                <img src="img/logo.png" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div className="col-lg-2">
+                        <div className="header__right">
+                            <a href="https://www.linkedin.com/in/manikandan-r-b10383183/"><i className="fa fa-github"></i></a>
+                            <a href="https://github.com/ManikandanRJSM"><i className="fa fa-linkedin"></i></a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                <div id="mobile-menu-wrap"></div>
             </div>
-        </nav>
+        </header>
+        
       </>
     )
   }
