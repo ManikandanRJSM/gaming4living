@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, Fragment } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import {Routes, Route} from 'react-router-dom'
@@ -22,7 +22,10 @@ function App() {
         <div className="row">
           <Routes>
           
-            <Route path="/" element={[<Streams />, <GameSidebar />]}></Route>
+            <Route path="/" element={
+            <Fragment>
+              <Streams /> <GameSidebar />
+              </Fragment>}></Route>
                   
           </Routes>
         </div>

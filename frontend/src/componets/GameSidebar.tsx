@@ -16,7 +16,7 @@ function GameSidebar() {
         .then(results => results.json())
         .then(games => {          
           setGamesdata(games.data)
-          console.log(games)
+          // console.log(games)
         });
       }, []);
     return (
@@ -27,8 +27,8 @@ function GameSidebar() {
                 <div className="section-title">
                     <h5>Games</h5>
                 </div>
-                {gamesdata.map(game => (          
-                  <div className="product__sidebar__comment__item" key={gamesdata.id}>
+                {gamesdata.map((game, index) => (          
+                  <div className="product__sidebar__comment__item sdsadasdad" key={index}>
                       <div className="product__sidebar__comment__item__pic">
                       <img src={game.box_art_url.replace('{width}', '90').replace('{height}', '130')} className="card-img-top" alt="..."/  >
                       </div>
