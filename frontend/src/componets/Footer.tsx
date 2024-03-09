@@ -26,9 +26,10 @@ function Footer() {
                           </ul> */}
                       </div>
                   </div>
-                  <div className="col-lg-3">
-                      <p>
-                        Copyright &copy; {new Date().getFullYear()} All rights reserved | ManikandanRJSM <i className="fa fa-heart" aria-hidden="true"></i>
+                  
+                  <div className="col-lg-9">
+                        <p style={{marginLeft: "387px"}}>
+                            V1.0 Copyright &copy; {new Date().getFullYear()} All rights reserved | ManikandanRJSM <i className="fa fa-heart" aria-hidden="true"></i>
                         </p>
 
                     </div>
