@@ -32,7 +32,7 @@ function App() {
 
             <Route path="/stream/:streamer/:id" element={
               <Fragment>
-                  <ViewStream /> <GameSidebar />
+                  <ViewStream />
               </Fragment>}>
 
             </Route>
