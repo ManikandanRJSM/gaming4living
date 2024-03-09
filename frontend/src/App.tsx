@@ -10,6 +10,7 @@ import GameSidebar from './componets/GameSidebar'
 import Navbar from './componets/Navbar'
 import Footer from './componets/Footer'
 import Streams from './componets/Streams'
+import ViewStream from './componets/ViewStream'
 
 function App() {
 
@@ -23,9 +24,18 @@ function App() {
           <Routes>
           
             <Route path="/" element={
-            <Fragment>
-              <Streams /> <GameSidebar />
-              </Fragment>}></Route>
+              <Fragment>
+                <Streams /> <GameSidebar />
+              </Fragment>}>
+
+            </Route>
+
+            <Route path="/stream/:streamer/:id" element={
+              <Fragment>
+                  <ViewStream /> <GameSidebar />
+              </Fragment>}>
+
+            </Route>
                   
           </Routes>
         </div>

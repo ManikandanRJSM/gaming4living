@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Streams() {
     const [streams, setStreams] = useState([])
@@ -32,6 +33,7 @@ function Streams() {
         })
           .then(results => results.json())
           .then(streams => {
+            console.log(streams.data);
             setStreams(streams.data)
           });
       }, []);
@@ -69,7 +71,7 @@ function Streams() {
                                     <ul>
                                         <li>{stream.game_name}</li>
                                     </ul>
-                                    <h5><a href="#">{stream.title}</a></h5>
+                                    <h5><Link to={`/stream/${stream.user_name}/${stream.id}`} relative="path">{stream.title}</Link></h5>
                                 </div>
                             </div>
                         </div>
