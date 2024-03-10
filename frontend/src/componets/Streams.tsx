@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import SiteLoader from './SiteLoader';
 
 function Streams() {
     const [streams, setStreams] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
     const navigateTo = useNavigate();
 
 
@@ -35,10 +37,13 @@ function Streams() {
           .then(streams => {
             console.log(streams.data);
             setStreams(streams.data)
+            setIsLoading(false)
           });
-      }, []);
+    }, []);
 
-      
+    if(isLoading){
+        return <SiteLoader />
+    }
   
     return (
       <>
