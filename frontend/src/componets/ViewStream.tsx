@@ -33,6 +33,7 @@ function ViewStream() {
                 <div className="anime__video__player">
                   <ReactTwitchEmbedVideo
                     channel={streamerId}
+                    height={1070}
                     width={1070}
                     theme="light"
                   />
