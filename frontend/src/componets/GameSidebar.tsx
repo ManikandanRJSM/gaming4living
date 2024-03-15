@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react'
+import SiteLoader from './SiteLoader';
 
 function GameSidebar() {
     const [gamesdata, setGamesdata] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
 
     const AuthStr = 'Bearer iemqodydrew18rjgv5zvlhn64tfmt3'; 
     useEffect(() => {
         
-        fetch('https://api.twitch.tv/helix/games/top', {
-            method: 'GET',
-            headers:{
-                'Authorization': AuthStr,
-                'Client-Id': '7lgqku9ix50ckzvnlscpdsfjv26zw2',
-              },
-        })
-        .then(results => results.json())
-        .then(games => {          
-          setGamesdata(games.data)
-          // console.log(games)
-        });
-      }, []);
+      fetch('https://api.twitch.tv/helix/games/top', {
+          method: 'GET',
+          headers:{
+              'Authorization': AuthStr,
+              'Client-Id': '7lgqku9ix50ckzvnlscpdsfjv26zw2',
+            },
+      })
+      .then(results => results.json())
+      .then(games => {          
+        setGamesdata(games.data)
+        setIsLoading(false)
+        // console.log(games)
+      });
+    }, []);
+    if(isLoading){
+      return <SiteLoader />
+    }
     return (
       <>
         <div className="col-lg-4 col-md-6 col-sm-8">
@@ -36,12 +42,8 @@ function GameSidebar() {
                           
                           <h5><a href="#">{game.name}</a></h5>
                       </div>
-                  </div>
-        
-          
+                  </div>         
                 ))}
-                
-                
             </div>
           </div>
         </div>

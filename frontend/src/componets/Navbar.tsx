@@ -19,8 +19,8 @@ function Navbar() {
                     <div className="col-lg-2">
                         <div className="header__right">
                             {/* <a>Powered by <i className="fa fa-twitch"></i></a> */}
-                            <a href="https://www.linkedin.com/in/manikandan-r-b10383183/"><i className="fa fa-github"></i></a>
-                            <a href="https://github.com/ManikandanRJSM"><i className="fa fa-linkedin"></i></a>
+                            <a href="https://github.com/ManikandanRJSM" target='_blank'><i className="fa fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/manikandan-r-b10383183/" target='_blank'><i className="fa fa-linkedin"></i></a>
                             
                             
                         </div>
