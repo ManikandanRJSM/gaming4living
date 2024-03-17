@@ -63,7 +63,7 @@ function Streams() {
                     </div> */}
                 </div>
                 <div className="row">
-                    {streams.map(stream => (
+                    {(streams.length > 0) ? streams.map(stream => (
                         <div className="col-lg-4 col-md-6 col-sm-6" key={stream.id}>
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
@@ -82,8 +82,16 @@ function Streams() {
                         </div>
                 
             
-                    ))}
+                    )) : ""}
                 </div>
+                <div className="row">
+                    <div className="col-lg-6">
+                        <div className="hero__text">
+                            <a href="#"><span>Load More</span> <i className="fa fa-angle-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
       </>
