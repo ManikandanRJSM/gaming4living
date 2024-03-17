@@ -6,7 +6,7 @@ declare module 'react-twitch-embed-video' {
     interface TwitchEmbedVideoOptions {
       width?: number;
       height?: number;
-      channel: string;
+      channel: string | undefined;
       theme: string;
     }
   

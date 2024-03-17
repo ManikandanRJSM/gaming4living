@@ -390,7 +390,7 @@ ol {
     padding: 20px 0 15px;
     display: flex;
     position: absolute;
-    margin-left: 810px;
+    margin-left: 1060px;
 }
 
 .header__right a {
@@ -494,7 +494,7 @@ ol {
 	font-size: 20px;
 	display: inline-block;
 	background: #e53637;
-	padding: 11px 5px 16px 8px;
+	padding: 12px 5px 15px 8px;
 	color: #ffffff;
 	border-radius: 0 4px 4px 0;
 }
