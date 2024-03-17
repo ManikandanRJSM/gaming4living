@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import SiteLoader from './SiteLoader';
 
 function Streams() {
-    const [streams, setStreams] = useState([])
+
+    const [streams, setStreams] = useState<string[]>([])
+    const [paginateQuery, setPaginateQuery] = useState('')
     const [isLoading, setIsLoading] = useState(true)
-    const navigateTo = useNavigate();
 
 
-    const AuthStr = 'Bearer iemqodydrew18rjgv5zvlhn64tfmt3'; 
     useEffect(() => {
         // fetch('https://id.twitch.tv/oauth2/token', {
         //     method: 'POST',
@@ -26,20 +26,58 @@ function Streams() {
         //   .then(data => {
         //     console.log(data)
         //   });
-        fetch('https://api.twitch.tv/helix/streams', {
+
+
+        let authParams = {
+            'authStr' : 'Bearer iemqodydrew18rjgv5zvlhn64tfmt3',
+            'clientId': '7lgqku9ix50ckzvnlscpdsfjv26zw2'
+        }
+        getStreams(authParams)
+        
+    }, []);
+
+    const getStreams = (authParams : {
+        authStr : string,
+        clientId : string 
+        }, paginateQuery: string | null = null) => {
+
+        let fetchURL = 'https://api.twitch.tv/helix/streams?first=18';
+        if(paginateQuery){
+            console.log(paginateQuery)
+            fetchURL = 'https://api.twitch.tv/helix/streams?first=18&after='+paginateQuery;
+        }
+        fetch(fetchURL, {
             method: 'GET',
             headers:{
-                'Authorization': AuthStr,
-                'Client-Id': '7lgqku9ix50ckzvnlscpdsfjv26zw2',
+                'Authorization': authParams.authStr,
+                'Client-Id': authParams.clientId,
               },
         })
           .then(results => results.json())
           .then(streams => {
-            console.log(streams.data);
-            setStreams(streams.data)
-            setIsLoading(false)
+
+                if(paginateQuery){
+                    setStreams(prevData => [...prevData, ...streams.data]);
+                }else{
+                    setStreams(streams.data)
+                } // end if
+                // Set paginate query for next page.
+                setPaginateQuery(streams.pagination.cursor)
+                setIsLoading(false)
+                // console.log(streams.data);
           });
-    }, []);
+    }
+
+    const loadMore = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        event.preventDefault();
+        let authParams = {
+            'authStr' : 'Bearer iemqodydrew18rjgv5zvlhn64tfmt3',
+            'clientId': '7lgqku9ix50ckzvnlscpdsfjv26zw2'
+        }
+        setIsLoading(true)
+        getStreams(authParams, paginateQuery)
+       
+    }    
 
     if(isLoading){
         return <SiteLoader />
@@ -87,7 +125,7 @@ function Streams() {
                 <div className="row">
                     <div className="col-lg-6">
                         <div className="hero__text">
-                            <a href="#"><span>Load More</span> <i className="fa fa-angle-down"></i></a>
+                            <a href="#" onClick={loadMore}><span>Load More</span> <i className="fa fa-angle-down"></i></a>
                         </div>
                     </div>
                 </div>
