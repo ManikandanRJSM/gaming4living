@@ -470,8 +470,8 @@ ol {
 
 .hero__text a {
 	position: relative;
-	top: -100px;
-	opacity: 0;
+	top: 50px;
+	/* opacity: 0; */
 	-webkit-transition: all, 0.8s;
 	-o-transition: all, 0.8s;
 	transition: all, 0.8s;
@@ -660,7 +660,7 @@ ol {
 	padding: 2px 10px;
 	border-radius: 4px;
 	position: absolute;
-	right: 10px;
+	right: 50px;
 	bottom: 10px;
 }
 
@@ -1923,7 +1923,7 @@ ol {
 	color: #ffffff;
 	height: 50px;
 	width: 50px;
-	background: #e53637;
+	background: #e53637 !important;
 	line-height: 50px;
 	text-align: center;
 	border-radius: 50%;
