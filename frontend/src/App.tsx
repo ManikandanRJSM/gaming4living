@@ -38,6 +38,20 @@ function App() {
               </Fragment>}>
 
             </Route>
+
+            <Route path="/all-games" element={
+              <Fragment>
+                <ViewStream />
+              </Fragment>}>
+
+            </Route>
+
+            <Route path="/games-streams/:gameId/:streamer/" element={
+              <Fragment>
+                <ViewStream />
+              </Fragment>}>
+
+            </Route>
                   
           </Routes>
         </div>
