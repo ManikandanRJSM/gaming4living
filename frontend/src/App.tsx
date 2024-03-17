@@ -12,6 +12,8 @@ import Footer from './componets/Footer'
 import Streams from './componets/Streams'
 import ViewStream from './componets/ViewStream'
 import SiteLoader from './componets/SiteLoader'
+import AllGames from './componets/AllGames'
+import GameStreams from './componets/GameStreams'
 
 function App() {
 
@@ -28,28 +30,32 @@ function App() {
               <Fragment>
                 <Streams />
                 <GameSidebar />
-              </Fragment>}>
+              </Fragment>
+            }>
 
             </Route>
 
             <Route path="/stream/:streamer/:id" element={
               <Fragment>
                 <ViewStream />
-              </Fragment>}>
+              </Fragment>
+            }>
 
             </Route>
 
             <Route path="/all-games" element={
               <Fragment>
-                <ViewStream />
-              </Fragment>}>
+                <AllGames />
+              </Fragment>
+            }>
 
             </Route>
 
             <Route path="/games-streams/:gameId/:streamer/" element={
               <Fragment>
-                <ViewStream />
-              </Fragment>}>
+                <GameStreams />
+              </Fragment>
+            }>
 
             </Route>
                   
