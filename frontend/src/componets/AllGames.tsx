@@ -88,7 +88,7 @@ function AllGames() {
                                   </div>
                                   <div className="product__item__text">
                                       
-                                      <h5><Link to={`/stream/${game.user_name}/${game.id}`} relative="path">{game.name}</Link></h5>
+                                      <h5><Link to={`/games-streams/${game.user_name}/${game.id}`} relative="path">{game.name}</Link></h5>
                                   </div>
                               </div>
                           </div>
