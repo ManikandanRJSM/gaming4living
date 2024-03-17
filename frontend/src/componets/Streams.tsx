@@ -43,7 +43,6 @@ function Streams() {
 
         let fetchURL = 'https://api.twitch.tv/helix/streams?first=18';
         if(paginateQuery){
-            console.log(paginateQuery)
             fetchURL = 'https://api.twitch.tv/helix/streams?first=18&after='+paginateQuery;
         }
         fetch(fetchURL, {
@@ -134,6 +133,6 @@ function Streams() {
         </div>
       </>
     )
-  }
+}
   
   export default Streams
