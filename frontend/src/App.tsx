@@ -14,6 +14,7 @@ import ViewStream from './componets/ViewStream'
 import SiteLoader from './componets/SiteLoader'
 import AllGames from './componets/AllGames'
 import GameStreams from './componets/GameStreams'
+import NotFound from './componets/NotFound'
 
 function App() {
 
@@ -51,12 +52,17 @@ function App() {
 
             </Route>
 
-            <Route path="/games-streams/:gameId/:streamer/" element={
+            <Route path="/games-streams/:gameId" element={
               <Fragment>
                 <GameStreams />
               </Fragment>
             }>
 
+            </Route>
+
+            <Route path="*" element={
+              <NotFound />
+            }>
             </Route>
                   
           </Routes>

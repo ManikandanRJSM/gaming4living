@@ -105,7 +105,7 @@ function Streams() {
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
                                 {/* data-setbg={stream.thumbnail_url.replace('{width}', '1000').replace('{height}', '500')} */}
-                                <img src={stream.thumbnail_url.replace('{width}', '230').replace('{height}', '325')} alt="..."/  >
+                                <img src={stream.thumbnail_url.replace('{width}', '250').replace('{height}', '250')} alt="..."/  >
                                     <div className="ep">{stream.type.toUpperCase()}</div>
                                     <div className="view"><i className="fa fa-eye"></i>{stream.viewer_count}</div>
                                 </div>
