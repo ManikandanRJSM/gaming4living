@@ -13,7 +13,7 @@ function AllGames() {
             'clientId': '7lgqku9ix50ckzvnlscpdsfjv26zw2'
         }
         getGames(authParams)
-    })
+    }, [])
 
     const getGames = (authParams : {
         authStr : string,
@@ -42,7 +42,6 @@ function AllGames() {
                 // Set paginate query for next page.
                 setPaginateQuery(games.pagination.cursor)
                 setIsLoading(false)
-                console.log(games.data);
           });
     }
 
@@ -71,24 +70,24 @@ function AllGames() {
                               <h4>Games</h4>
                           </div>
                       </div>
-                      {/* <div className="col-lg-4 col-md-4 col-sm-4">
+                      <div className="col-lg-4 col-md-4 col-sm-4">
                           <div className="btn__all">
-                              <a href="#" className="primary-btn">View All <span className="arrow_right"></span></a>
+                              <a href="/" className="primary-btn">Go Back <span className="arrow_left"></span></a>
                           </div>
-                      </div> */}
+                      </div>
                   </div>
                   <div className="row">
                       {(gamesList.length > 0) ? gamesList.map(game => (
                           <div className="col-lg-4 col-md-6 col-sm-6" key={game.id}>
                               <div className="product__item">
                                   <div className="product__item__pic set-bg">
-                                  <img src={game.box_art_url.replace('{width}', '230').replace('{height}', '325')} alt="..."/  >
+                                  <img src={game.box_art_url.replace('{width}', '250').replace('{height}', '250')} alt="..."/  >
                                       {/* <div className="ep">{game.type}</div> */}
                                       {/* <div className="view"><i className="fa fa-eye"></i>{game.viewer_count}</div> */}
                                   </div>
                                   <div className="product__item__text">
                                       
-                                      <h5><Link to={`/games-streams/${game.user_name}/${game.id}`} relative="path">{game.name}</Link></h5>
+                                      <h5><Link to={`/games-streams/${game.id}`} relative="path">{game.name}</Link></h5>
                                   </div>
                               </div>
                           </div>
